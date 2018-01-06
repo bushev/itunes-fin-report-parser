@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Report = require('./report');
+const Report = require('../report');
 const argv   = require('optimist')
     .usage('Usage: $0 -d [string] -f [string] -c [string]')
     .demand(['d', 'f', 'c'])

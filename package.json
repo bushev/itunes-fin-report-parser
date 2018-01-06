@@ -1,11 +1,15 @@
 {
   "name": "itunes-fin-report-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Display proceeds per application",
-  "main": "index.js",
+  "main": "report.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "itunes-fin-report-parser": "./bin/index.js"
+  },
+  "preferGlobal": true,
   "author": "Yury Bushev",
   "license": "MIT",
   "dependencies": {
