@@ -1,6 +1,6 @@
 {
   "name": "itunes-fin-report-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Display proceeds per application",
   "main": "index.js",
   "scripts": {
