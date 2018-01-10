@@ -61,7 +61,7 @@ class ReportGooglePlay {
 
             proceedsTotal += proceeds;
 
-            apps.push([appTitle, '$ ' + accounting.toFixed(proceeds, 2)]);
+            apps.push([appTitle, accounting.toFixed(proceeds, 2) + ' USD']);
         }
 
         const config = {
@@ -79,7 +79,7 @@ class ReportGooglePlay {
 
         console.log(table(apps, config));
 
-        console.log(`Total (calculated): $ ${accounting.toFixed(proceedsTotal, 2)}`);
+        console.log(`Total (calculated): ${accounting.toFixed(proceedsTotal, 2)} USD`);
     }
 
     async display() {
