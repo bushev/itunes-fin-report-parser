@@ -26,3 +26,8 @@ Total: 309.47 USD (109 items)
 Total (calculated): 310.91 USD (109 items)
 
 ```
+
+
+### TODO: GP
+
+`node bin/index_google_play.js -f ~/Downloads/PlayApps_201709.csv`
