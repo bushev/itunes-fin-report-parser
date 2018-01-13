@@ -46,6 +46,8 @@ class Report {
                             dataRow[headerItem] = row[index];
                         });
 
+                        dataRow['Unique title'] = dataRow['Title'] + ` (${dataRow['Vendor Identifier']})`;
+
                         this.reportData.push(dataRow);
 
                         i++;
@@ -86,9 +88,9 @@ class Report {
 
         this.reportData.forEach(item => {
 
-            if (!this.apps[item['Title']]) {
+            if (!this.apps[item['Unique title']]) {
 
-                this.apps[item['Title']] = [];
+                this.apps[item['Unique title']] = [];
             }
 
             item[`Extended Partner Share (${fx.base})`] = fx.convert(item['Extended Partner Share'], {
@@ -96,7 +98,7 @@ class Report {
                 to: fx.base
             });
 
-            this.apps[item['Title']].push(item);
+            this.apps[item['Unique title']].push(item);
         });
     }
 
