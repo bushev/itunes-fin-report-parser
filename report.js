@@ -65,11 +65,20 @@ class Report {
 
         finReport.split('\n').forEach(line => {
 
-            const result = line.match(/.* \((\w+)\),"(.*)",".*",".*",".*",".*",".*",".*","(.*)","(.*)",".*",/);
+            const result = line.match(/.* \((\w+)\)","(.*)",".*",".*",".*",".*","(.*)","(.*)",".*",/);
 
             if (result) {
 
-                fx.rates[result[1]] = 1 / result[3];
+                if (+result[4] === 0) {
+
+                    fx.rates[result[1]] = 99999999999; // will note be used
+
+                } else {
+
+                    fx.rates[result[1]] = result[3] / result[4];
+                }
+
+                // console.log(`curr: ${result[1]}, proceeds: ${parseFloat(result[4])}, items: ${parseFloat(result[2])}, rate: ${fx.rates[result[1]]}`);
 
                 this.finReportProceedsTotal += parseFloat(result[4]);
                 this.finReportItemsTotal += parseInt(result[2]);
