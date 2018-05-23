@@ -66,6 +66,7 @@ class Report {
         finReport.split('\n').forEach(line => {
 
             const result = line.match(/.* \((\w+)\)","(.*)",".*",".*",".*",".*","(.*)","(.*)",".*",/);
+            // const result = line.match(/.* \((\w+)\)","(.*)",".*",".*",".*",".*",".*",".*","(.*)","(.*)",".*",/);
 
             if (result) {
 
@@ -76,6 +77,8 @@ class Report {
                 } else {
 
                     fx.rates[result[1]] = result[3] / result[4];
+
+                    // fx.rates[result[1]] = 1 / result[3];
                 }
 
                 // console.log(`curr: ${result[1]}, proceeds: ${parseFloat(result[4])}, items: ${parseFloat(result[2])}, rate: ${fx.rates[result[1]]}`);
@@ -106,6 +109,8 @@ class Report {
                 from: item['Partner Share Currency'],
                 to: fx.base
             });
+
+            // console.log(`From: ${item['Partner Share Currency']}, USD: ${item[`Extended Partner Share (${fx.base})`]}`);
 
             this.apps[item['Unique title']].push(item);
         });
