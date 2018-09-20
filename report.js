@@ -77,7 +77,6 @@ class Report {
                 } else {
 
                     fx.rates[result[1]] = result[3] / result[4];
-
                     // fx.rates[result[1]] = 1 / result[3];
                 }
 
